@@ -1,1 +1,36 @@
-<p @fade>home works!</p>
+<div class="container"
+     fxLayout="row"
+     fxLayoutGap="10px"
+     fxLayoutAlign="center">
+
+  <div @fade fxFlex="50" fxLayout="column" fxLayoutAlign="start center">
+      <h1>Miguel Vicente Ortega Santiago</h1>  
+      <h3>Junior Web Developer</h3>
+      <hr>
+
+      <mat-list [@listAnimation]="skills.length">
+        <mat-list-item *ngFor="let skill of skills">
+          <h3>{{skill.name}}</h3>
+        </mat-list-item>
+      </mat-list>
+  </div>
+
+  <!-- <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let dish of dishes">
+        <img height="200px" src={{dish.image}} alt={{dish.name}}>
+        <mat-grid-tile-footer>
+          <h1>{{dish.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div> -->
+
+  <!-- <div fxFlex>
+    <mat-list>
+      <mat-list-item *ngFor="let skill of skills">
+          <h3>{{console.log(skill)}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </div> -->
+</div>

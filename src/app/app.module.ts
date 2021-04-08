@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 //import { routes } from './app-routing/routes';
 
 
@@ -32,7 +34,9 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    FlexLayoutModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

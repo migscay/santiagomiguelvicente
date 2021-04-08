@@ -1,1 +1,33 @@
-<p>projects works!</p>
+<div class="container"
+     fxLayout="row"
+     fxLayoutGap="10px"
+     fxLayoutAlign="center">
+
+  <div @fade fxFlex="50" fxLayout="column" fxLayoutAlign="start center">
+      <h1>Recent Projects</h1>  
+      <hr>
+  </div>
+  <div fxFlex> 
+      <mat-grid-list cols="2" rowHeight="200px">
+        <mat-grid-tile *ngFor="let project of projects">
+          <img height="200px" src={{project.image}} alt={{project.name}}>
+          <mat-grid-tile-footer>
+            <h1>{{project.name | uppercase}}</h1>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <!-- <mat-list [@listAnimation]=skills.length>
+        <mat-list-item *ngFor="let skill of skills">
+          <h3>{{skill.name}}</h3>
+        </mat-list-item>
+      </mat-list> -->
+
+      <!-- <mat-list [@listAnimation]="projects.length">
+        <mat-list-item *ngFor="let project of projects">
+          <h3>{{project.name}}</h3>
+        </mat-list-item>
+      </mat-list> -->
+
+    </div>
+</div>

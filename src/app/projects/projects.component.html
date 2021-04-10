@@ -3,16 +3,20 @@
      fxLayoutGap="10px"
      fxLayoutAlign="center">
 
-  <div @fade fxFlex="50" fxLayout="column" fxLayoutAlign="start center">
+  <!-- <div @fade fxFlex="50" fxLayout="column" fxLayoutAlign="start center">
       <h1>Recent Projects</h1>  
       <hr>
-  </div>
+  </div> -->
   <div fxFlex> 
+    <h1>Recent Projects</h1>  
       <mat-grid-list cols="2" rowHeight="200px">
         <mat-grid-tile *ngFor="let project of projects">
           <img height="200px" src={{project.image}} alt={{project.name}}>
-          <mat-grid-tile-footer>
+          <!-- <mat-grid-tile-header>
             <h1>{{project.name | uppercase}}</h1>
+          </mat-grid-tile-header> -->
+          <mat-grid-tile-footer>
+            <h1>{{project.name | uppercase}} {{project.description}}</h1>
           </mat-grid-tile-footer>
         </mat-grid-tile>
       </mat-grid-list>

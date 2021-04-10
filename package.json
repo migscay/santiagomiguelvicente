@@ -24,6 +24,7 @@
     "@angular/router": "~11.2.8",
     "angular-avatar": "^1.4.0",
     "angular-typed": "^0.0.3",
+    "emailjs-com": "^2.6.4",
     "font-awesome": "^4.7.0",
     "rxjs": "~6.6.0",
     "t-writer.js": "^1.0.4",

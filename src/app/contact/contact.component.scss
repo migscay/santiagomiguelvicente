@@ -9,3 +9,8 @@
 .form-size {
     width: 75%
 }
+
+button:disabled {
+    background: rgb(204, 204, 204);
+    cursor: default;
+}

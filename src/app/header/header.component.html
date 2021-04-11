@@ -1,31 +1,42 @@
 <mat-toolbar color="primary">
-    <!-- <Link to="/"><Avatar alt="Miguel Santiago" src={myPicture} /></Link> -->
-    <img mat-card-avatar routerLink="/home" src="/assets/images/myPicture.jpg" height=30 width=41> 
-    <a mat-button routerLink="/home"><span class="fa fa-home fa-lg"></span> Home</a>
-    <!-- <a mat-button routerLink="/about"><span class="fa fa-info fa-lg"></span> About</a> -->
-    <a mat-button routerLink="/projects"><span class="fa fa-list fa-lg"></span> Projects</a>
-    <a mat-button routerLink="/contact"><span class="fa fa-address-card fa-lg"></span> Contact Me</a>  
-    <!-- <span class="flex-spacer"></span>
-    <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Login</a> -->
-  </mat-toolbar>
-    
-    <div class="container jumbotron"
-        fxLayout="row"
-        fxLayout.sm="column" 
-        fxLayout.xs="column" 
-        fxLayoutAlign.xs="start center"
-        fxLayoutAlign.sm="start center" 
-        fxLayoutAlign.gt-sm="center center" 
-        fxLayoutGap="10px">
-    
-        <!-- <div fxFlex fxFlex.gt-sm="50%">
-          <h1>Ristorante Con Fusion</h1>
-          <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations
-            will tickle your culinary senses!</p>
-        </div>
-        <div fxFlex fxFlex.gt-sm="20%">
-          <img src="/assets/images/myPicture.jpg" alt="miguel santiago">
-        </div> -->
-      <div fxFlex></div>
-    </div>
+  <!-- <Link to="/"><Avatar alt="Miguel Santiago" src={myPicture} /></Link> -->
+  <!-- <img mat-card-avatar routerLink="/home" src="/assets/images/myPicture.jpg" height=30 width=41>  -->
+  <a mat-button routerLink="/home"><span class="fa fa-home fa-lg"></span> Home</a>
+  <!-- <a mat-button routerLink="/about"><span class="fa fa-info fa-lg"></span> About</a> -->
+  <a mat-button routerLink="/projects"><span class="fa fa-list fa-lg"></span> Projects</a>
+  <a mat-button routerLink="/contact"><span class="fa fa-address-card fa-lg"></span> Contact Me</a>  
+  <!-- <span class="flex-spacer"></span>
+  <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Login</a> -->
+</mat-toolbar>
   
+  <div class="container jumbotron"
+      fxLayout="row"
+      fxLayout.sm="column" 
+      fxLayout.xs="column" 
+      fxLayoutAlign.xs="start center"
+      fxLayoutAlign.sm="start center" 
+      fxLayoutAlign.gt-sm="center center" 
+      fxLayoutGap="10px">
+
+      <!-- <div className="about-wraper"> -->
+        <div fxFlex="20" [fxHide.xs]="true">
+            <img class="about__img" src="/assets/images/myPicture.jpg" alt="Miguel Santiago">
+        </div>
+
+        <div fxFlex="80">
+          <p style="text-align:justify">Experienced Analyst/Programmer with decades of experience. I have recently completed the Junior Web Development bootcamp by Generation Australia.
+             With my knowledge and experience in coding, I can help create effective systems to assist businesses effectively connect with their customers. I am excited to apply my 
+            strengths in diagnosing and developing innovative solutions.This Portfolio is made with Angular.</p>
+        </div>
+      <!-- </div> -->
+
+      <!-- <div fxFlex fxFlex.gt-sm="50%">
+        <h1>Ristorante Con Fusion</h1>
+        <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations
+          will tickle your culinary senses!</p>
+      </div>
+      <div fxFlex fxFlex.gt-sm="20%">
+        <img src="/assets/images/myPicture.jpg" alt="miguel santiago">
+      </div> -->
+    <div fxFlex></div>
+  </div>

@@ -10,19 +10,19 @@
   </div>
 
   <div fxFlex fxFlexOffset="20px" class="form-size">
-    <p>{{ contactForm.value | json }} {{ contactForm.status | json }}</p>
+    <!-- <p>{{ contactForm.value | json }} {{ contactForm.status | json }}</p> -->
 
     <form novalidate [formGroup]="contactForm" (ngSubmit)="onSubmit($event)">
       <p>
         <mat-form-field class="half-width">
-          <input matInput formControlName="name" placeholder="Name" type="text" required>
-          <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+          <input matInput formControlName="from_name" placeholder="Name" type="text" required>
+          <mat-error *ngIf="formErrors.from_name">{{formErrors.from_name}}</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field class="half-width">
-          <input matInput formControlName="email" placeholder="Email" type="email" email required>
-          <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+          <input matInput formControlName="from_email" placeholder="Email" type="email" email required>
+          <mat-error *ngIf="formErrors.from_email">{{formErrors.from_email}}</mat-error>
         </mat-form-field>
       </p>
       <p>
@@ -30,7 +30,7 @@
           <textarea matInput formControlName="message" placeholder="Your Feedback" rows=12></textarea>
         </mat-form-field>
       </p>
-      <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+      <button [disabled]="!this.contactForm.valid" type="submit" mat-button class="background-primary text-floral-white">Submit</button>
     </form>
   </div>
     

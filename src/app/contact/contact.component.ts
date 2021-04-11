@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -9,29 +10,29 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder) {
     this.createForm();
   }
 
   contactForm: FormGroup;
 
   formErrors = {
-    'name': '',
-    'email': '',
+    'from_name': '',
+    'from_email': '',
     'message': '',
   };
 
   validationMessages = {
-    'name': {
+    'from_name': {
       'required': 'Name is required.',
       'minlength': 'Name is too short.',
     },
-    'email': {
+    'from_email': {
       'required': 'Email is required.',
       'email': 'Email address is not valid.',
     },
-    'comment': {
-      'required': 'Comment is required.',
+    'message': {
+      'required': 'Message is required.',
     },  
   };
 
@@ -41,8 +42,8 @@ export class ContactComponent implements OnInit {
 
   createForm() {
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
+      from_name: ['', [Validators.required, Validators.minLength(2)]],
+      from_email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required] ],
     });
 
@@ -73,23 +74,44 @@ export class ContactComponent implements OnInit {
 
   onSubmit(Event) {
 
+    console.log(Event.target);
+
     this.sendEmail(Event);
 
     this.contactForm.reset({
-      name: '',
-      email: '',
+      from_name: '',
+      from_email: '',
       message: '',
     });
   }
 
   sendEmail(Event) {
 
-    emailjs.sendForm('service_57kghoc', 'contact_form', Event.target, 'user_5VciSNeLhEEnJu4adtrBt')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    let data = {
+      service_id: 'service_57kghoc',
+      template_id: 'contact_form',
+      user_id: 'user_5VciSNeLhEEnJu4adtrBt',
+      template_params: {
+        from_name: this.contactForm.value.from_name,
+        from_email: this.contactForm.value.from_email,
+        message: this.contactForm.value.message,
+      }
+    };
+
+    this.http.post('https://api.emailjs.com/api/v1.0/email/send', data, { responseType: 'text' })
+      .subscribe((result) => {
+        alert('Your message has been sent!');
+      }, (error: HttpErrorResponse) => {
+        alert('Oops... ' + error.message);
+      }
+    );
+
+    // emailjs.sendForm('service_57kghoc', 'contact_form', Event.target, 'user_5VciSNeLhEEnJu4adtrBt')
+    //   .then((result) => {
+    //       console.log(result.text);
+    //   }, (error) => {
+    //       console.log(error.text);
+    //   });
     //e.target.reset();
   }
 

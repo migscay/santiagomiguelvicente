@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
         name: 'Note Taking',
         url: '#',
         image: '/assets/images/noteTaking.gif',
-        description: 'A note taking widows desktop app done with C#',
+        description: 'A note taking windows desktop app done with C#',
         languages: ''
       }
     ]

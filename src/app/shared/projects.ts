@@ -2,6 +2,20 @@ import { Project } from './project';
 
 export const PROJECTS: Project[] = [
     {
+      name: 'MVP Talent',
+      url: 'https://mvptalentm.azurewebsites.net/Home',
+      image: '/assets/images/mvptalent.gif',
+      description: 'Talent app connects job seekers and employers. It also provides the functions for both candidates and employers to manage the recruitment process.',
+      languages: 'JavaScript: 78.7% C#: 4.2% CSS: 16.9% Other: 0.2%'
+    },
+    {
+      name: 'MVP Store',
+      url: 'https://mvpstore.azurewebsites.net/',
+      image: '/assets/images/mvpstore.gif',
+      description: 'ASP.NET Core MVC app with React, and database on Microsoft SQL Server.',
+      languages: 'TypeScript: 57.4 % HTML: 42.6 %'
+    },
+    {
       name: 'Bitcoin Ticker',
       url: 'https://bitcoin-ticker.vercel.app/',
       image: '/assets/images/bitcoin.gif',

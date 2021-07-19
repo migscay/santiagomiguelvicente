@@ -1,6 +1,7 @@
 import { Skill } from './skill';
 
 export const SKILLS: Skill[] = [
+    {"name": "C#, .NET Framework, LINQ, Entity Framework"},
     {"name": "JavaScript/HTML/CSS/Sass/Bootstrap"},
     {"name": "React/Angular/NPM/NodeJs/JQuery"},
     {"name": "Git/Github"},
